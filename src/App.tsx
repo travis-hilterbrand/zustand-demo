@@ -1,29 +1,17 @@
-import { useState } from "react";
 import "./App.css";
-
-/*
-import { create } from 'zustand'
-
-const useStore = create((set) => ({
-  count: 1,
-  inc: () => set((state) => ({ count: state.count + 1 })),
-}))
-
-function Counter() {
-  const { count, inc } = useStore()
-  return (
-    <div>
-      <span>{count}</span>
-      <button onClick={inc}>one up</button>
-    </div>
-  )
-}
-*/
+import { Counter, useCounterStore } from "./Counter";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <div></div>;
+  const { count } = useCounterStore();
+  return (
+    <div>
+      <Counter id="Counter 1" />
+      <hr />
+      <Counter id="Counter 2" />
+      <hr />
+      <span>ReadOnly: {count}</span>
+    </div>
+  );
 }
 
 export default App;
