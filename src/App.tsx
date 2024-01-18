@@ -1,15 +1,17 @@
 import "./App.css";
-import { Counter, useCounterStore } from "./Counter";
+import { Counter } from "./Counter";
+import { ReadOnly } from "./ReadOnly";
 
 function App() {
-  const { count } = useCounterStore();
   return (
     <div>
       <Counter id="Counter 1" />
       <hr />
       <Counter id="Counter 2" />
       <hr />
-      <span>ReadOnly: {count}</span>
+      <ReadOnly />
+      <hr />
+      <span>Static</span>
     </div>
   );
 }
